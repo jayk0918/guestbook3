@@ -154,7 +154,7 @@ public class GuestBookDao {
 			query += " select no ";
 			query += "     	 ,name ";
 			query += "       ,content ";
-			query += "       ,reg_date date ";
+			query += "       ,reg_date ";
 			query += " from guestbook ";
 			query += " where no = ? ";
 
@@ -168,7 +168,7 @@ public class GuestBookDao {
 				int no = rs.getInt("no");
 				String name = rs.getString("name");
 				String content = rs.getString("content");
-				String date = rs.getString("date");
+				String date = rs.getString("reg_date");
 				
 				guestBookVo = new GuestBookVo(no, name, content, date);
 			}
